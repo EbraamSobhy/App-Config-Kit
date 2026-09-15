@@ -22,6 +22,9 @@ npx degit EbraamSobhy/App-Config-Kit/docker ./docker
 
 # Git (git commands)
 npx degit EbraamSobhy/App-Config-Kit/git ./git
+
+# TailwindCSS (import tailwindcss in your project)
+npx degit EbraamSobhy/App-Config-Kit/tailwindcss ./tailwindcss
 ```
 
 ### Moving your files into your project root after you've degit'd or cloned the template into a temp folder and now want the actual files (not the container folders) sitting at root.
