@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      target: development   # use a "development" stage in your Dockerfile
+    container_name: frontend-app
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - .:/app                     # live-reload: mount source code
+      - /app/node_modules          # prevent host node_modules from overwriting container's
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true   # needed for hot-reload in some Docker setups (esp. WSL2/mac)
+    command: npm run dev
+    stdin_open: true
+    tty: true
+
+  # Optional: uncomment if your app needs a backend/API mock or DB locally
+  # api:
+  #   image: node:20-alpine
+  #   working_dir: /app
+  #   volumes:
+  #     - ./mock-api:/app
+  #   ports:
+  #     - "4000:4000"
+  #   command: npm start
+
+networks:
+  default:
+    name: frontend-app-network
