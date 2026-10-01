@@ -18,6 +18,8 @@ echo "14) Show remotes"
 echo "15) Show git config"
 echo "16) Exit"
 
+# chmod +x git.sh
+
 read -p "Enter your choice: " choice
 
 case "$choice" in
