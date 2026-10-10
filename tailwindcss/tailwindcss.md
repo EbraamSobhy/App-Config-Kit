@@ -5,6 +5,11 @@
 npm install tailwindcss @tailwindcss/vite
 ```
 
+### Create Register the Plugin
+```bash
+touch vite.config.ts
+```
+
 ### Configure the Vite plugin
 ```ts
 import { defineConfig } from 'vite'
