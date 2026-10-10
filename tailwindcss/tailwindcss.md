@@ -22,6 +22,11 @@ export default defineConfig({
 })
 ```
 
+### Create CSS File
+```bash
+touch src/App.css
+```
+
 ### Import Tailwind CSS
 
 ```CSS
