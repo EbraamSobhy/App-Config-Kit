@@ -6,48 +6,48 @@ PACKAGE_MANAGER=npm
 .DEFAULT_GOAL := help
 
 # Install dependencies
-install:
+i:
 	$(PACKAGE_MANAGER) install
 
 # Start development server
-dev:
+d:
 	$(PACKAGE_MANAGER) run dev
 
 # Build production files
-build:
+b:
 	$(PACKAGE_MANAGER) run build
 
 # Preview production build
-preview:
+p:
 	$(PACKAGE_MANAGER) run preview
 
 # Run lint
-lint:
+l:
 	$(PACKAGE_MANAGER) run lint
 
 # Run tests (if configured)
-test:
+t:
 	$(PACKAGE_MANAGER) run test
 
 # Clean node_modules and build output
-clean:
+c:
 	rm -rf node_modules dist
 
 # Reinstall everything
-reinstall: clean install
+r: clean install
 
 # Create production build and serve preview
-start: build preview
+s: build preview
 
 # Help menu
 help:
 	@echo "Available commands:"
-	@echo "  make install    - Install dependencies"
-	@echo "  make dev        - Start Vite dev server"
-	@echo "  make build      - Build for production"
-	@echo "  make preview    - Preview production build"
-	@echo "  make lint       - Run linter"
-	@echo "  make test       - Run tests"
-	@echo "  make clean      - Remove node_modules and dist"
-	@echo "  make reinstall  - Clean and reinstall dependencies"
-	@echo "  make start      - Build and preview app"
+	@echo "  make i        - Install dependencies"
+	@echo "  make d        - Start Vite dev server"
+	@echo "  make b        - Build for production"
+	@echo "  make p        - Preview production build"
+	@echo "  make l        - Run linter"
+	@echo "  make t        - Run tests"
+	@echo "  make c        - Remove node_modules and dist"
+	@echo "  make r        - Clean and reinstall dependencies"
+	@echo "  make s        - Build and preview app"
